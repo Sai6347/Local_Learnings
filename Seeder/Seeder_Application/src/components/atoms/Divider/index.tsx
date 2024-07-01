@@ -16,7 +16,7 @@ interface DividerProps {
 
 const StyledDivider = styled(Divider, {
     shouldForwardProp: (prop) => prop !== "borderBottomWidth" && prop !== "height",
-})<DividerProps>(({ theme, borderBottomWidth, height }) => ({
+    })<DividerProps>(({ theme, borderBottomWidth, height }) => ({
     borderColor: theme.palette?.Borders.highEmphasis,
     color: theme.palette.text?.mediumEmphasis,
     borderBottomWidth: borderBottomWidth || undefined,

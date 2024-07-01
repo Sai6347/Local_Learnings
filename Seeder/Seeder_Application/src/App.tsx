@@ -24,15 +24,17 @@ export default function App() {
 
         <br />
 
-        <DividerAtom orientation="horizontal" variant="middle">Center</DividerAtom>
+        {/* <DividerAtom orientation="horizontal" variant="middle">Center</DividerAtom>
         <br />
 
         <DividerAtom orientation="horizontal" textAlign="right" variant="fullWidth">Right</DividerAtom>
 
         <br />
 
-        <DividerAtom orientation="vertical" height="50px" sx={{ width:"5px"}}/>
+        <DividerAtom orientation="vertical" height="50px" sx={{ width:"15px"}}/> */}
 
+        <br />
+        
         <br />
 
         <TypographyAtom
@@ -42,10 +44,10 @@ export default function App() {
 
         <br />
 
-        <TypographyAtom 
+        {/* <TypographyAtom 
           variant="heading3" 
           color= {theme.palette.text.lowEmphasis}
-          children="Enter your mail id and password to login" /> <br /> <br />
+          children="Enter your mail id and password to login" /> <br /> <br /> */}
 
 
         

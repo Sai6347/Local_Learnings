@@ -7,10 +7,10 @@ import theme from "../../../theme";
 
 describe('<DividerAtom />', () => {
     
-    it('renders with default styles and props', () => {
+    it('render horizontal divider with default styles and props', () => {
         const { container } = render(
             <ThemeProvider theme={theme}>
-                <DividerAtom />
+                <DividerAtom orientation="horizontal"/>
             </ThemeProvider>
         );
         const dividerElement = container.firstChild as HTMLElement;
@@ -40,7 +40,7 @@ describe('<DividerAtom />', () => {
     it('render horizontal divider with inset and borderBottomWidth', () => {
         const { container } = render(
             <ThemeProvider theme={theme}>
-                <DividerAtom orientation="horizontal" variant="inset" borderBottomWidth="3px"/>
+                <DividerAtom orientation="horizontal" color="#FFFFFF" variant="inset" borderBottomWidth="3px"/>
             </ThemeProvider>
         );
         const dividerElement = container.firstChild as HTMLElement;
@@ -79,6 +79,7 @@ describe('<DividerAtom />', () => {
     
         expect(getByText('Test Child')).toBeInTheDocument();
     });
+
 
 });
 
