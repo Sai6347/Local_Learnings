@@ -1,10 +1,9 @@
 import React from "react";
 import { ThemeProvider } from "@mui/material/styles";
-import { Box, Button, CssBaseline, Typography } from "@mui/material";
+import { Box, CssBaseline, Typography } from "@mui/material";
 import theme from "./theme";
 import { DividerAtom } from "./components/atoms/Divider/index";
 import { TypographyAtom } from "./components/atoms/Typography";
-import iconPath from "./utils/Constants";
 
 export default function App() {
 
