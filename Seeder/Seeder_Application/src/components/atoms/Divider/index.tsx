@@ -1,7 +1,7 @@
 import { Divider, SxProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import React from "react";
-import theme from "../../../theme";
+// import theme from "../../../theme";
 
 interface DividerProps {
     orientation?: "horizontal" | "vertical";
@@ -19,8 +19,8 @@ const StyledDivider = styled(Divider, {
     })<DividerProps>(({ theme, borderBottomWidth, height }) => ({
     borderColor: theme.palette?.Borders.highEmphasis,
     color: theme.palette.text?.mediumEmphasis,
-    borderBottomWidth: borderBottomWidth || undefined,
-    height: height || undefined,
+    borderBottomWidth: borderBottomWidth ?? undefined,
+    height: height ?? undefined,
     "&::before, &::after": {
         width: "100%",
         borderTop: "thin solid #413F4D",

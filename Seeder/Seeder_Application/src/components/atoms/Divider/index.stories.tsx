@@ -50,7 +50,7 @@ export default {
   },
 } as Meta;
 
-// const Template: StoryFn<DividerProps> = (args) => <DividerAtom {...args} />;
+
 const Template: StoryFn<DividerProps> = (args) => (
   <ThemeProvider theme={theme}>
     <DividerAtom {...args} />
