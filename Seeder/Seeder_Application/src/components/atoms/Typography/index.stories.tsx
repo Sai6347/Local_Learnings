@@ -1,18 +1,9 @@
-// TypographyAtom.stories.tsx
-
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import TypographyAtom from './index';
-import { TypographyProps } from '@mui/material';
-
-interface TypoProps {
-    variant: TypographyProps['variant'],
-    color?: string;
-    children: React.ReactNode;
-}
+import { TypographyAtom, TypoProps } from './index';
 
 export default {
-  title: 'Components/Atoms/TypographyAtom',
+  title: 'Atoms/TypographyAtom',
   component: TypographyAtom,
   argTypes: {
     variant: {

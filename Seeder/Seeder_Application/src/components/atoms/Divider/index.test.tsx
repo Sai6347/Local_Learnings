@@ -1,34 +1,37 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
-import DividerAtom from "./index";
+import { DividerAtom }from "./index";
 import { ThemeProvider } from "@mui/material";
 import theme from "../../../theme";
 
 describe('<DividerAtom />', () => {
-    
-    it('render horizontal divider with default styles and props', () => {
-        const { container } = render(
+
+
+    it('should render divider with default styles and props', () => {
+
+        render(   
             <ThemeProvider theme={theme}>
-                <DividerAtom orientation="horizontal"/>
+                <DividerAtom id="divider"/>
             </ThemeProvider>
-        );
-        const dividerElement = container.firstChild as HTMLElement;
-    
+        ) ;
+
+        const dividerElement = screen.getByTestId('divider');
+
         expect(dividerElement).toBeInTheDocument();
-        expect(dividerElement).toHaveStyle(`borderColor: ${theme.palette?.Borders.highEmphasis}`); 
-        expect(dividerElement).toHaveStyle(`color: ${theme.palette.text?.mediumEmphasis}`); 
+        expect(dividerElement).toHaveStyle(`borderColor: ${theme.palette.Borders.highEmphasis}`); 
+        expect(dividerElement).toHaveStyle(`color: ${theme.palette.text.mediumEmphasis}`); 
         expect(dividerElement).toHaveStyle('borderBottomWidth: undefined');
         expect(dividerElement).toHaveStyle('height: undefined');
     });
 
-    it('render horizontal divider with full width', () => {
-        const { container } = render(
+    it('should render horizontal divider with full width', () => {
+       render(
             <ThemeProvider theme={theme}>
-                <DividerAtom orientation="horizontal" variant="fullWidth" />
+                <DividerAtom orientation="horizontal" id="divider" variant="fullWidth" />
             </ThemeProvider>
         );
-        const dividerElement = container.firstChild as HTMLElement;
+        const dividerElement = screen.getByTestId('divider');
     
         expect(dividerElement).toBeInTheDocument();
         expect(dividerElement).toHaveStyle(`borderColor: ${theme.palette?.Borders.highEmphasis}`); 
@@ -38,12 +41,12 @@ describe('<DividerAtom />', () => {
     });
 
     it('render horizontal divider with inset and borderBottomWidth', () => {
-        const { container } = render(
+        render(
             <ThemeProvider theme={theme}>
-                <DividerAtom orientation="horizontal" color="#FFFFFF" variant="inset" borderBottomWidth="3px"/>
+                <DividerAtom orientation="horizontal" id="divider" variant="inset" borderBottomWidth="3px"/>
             </ThemeProvider>
         );
-        const dividerElement = container.firstChild as HTMLElement;
+        const dividerElement = screen.getByTestId('divider');
     
         expect(dividerElement).toBeInTheDocument();
         expect(dividerElement).toHaveStyle(`borderColor: ${theme.palette?.Borders.highEmphasis}`); 
@@ -54,12 +57,12 @@ describe('<DividerAtom />', () => {
 
     
     it('render vertical divider with height', () => {
-        const { container } = render(
+        render(
             <ThemeProvider theme={theme}>
-                <DividerAtom orientation="horizontal" variant="inset" height="50px"/>
+                <DividerAtom orientation="horizontal" id="divider" variant="inset" height="50px"/>
             </ThemeProvider>
         );
-        const dividerElement = container.firstChild as HTMLElement;
+        const dividerElement = screen.getByTestId('divider');
     
         expect(dividerElement).toBeInTheDocument();
         expect(dividerElement).toHaveStyle(`borderColor: ${theme.palette?.Borders.highEmphasis}`); 
@@ -71,7 +74,7 @@ describe('<DividerAtom />', () => {
     it('renders with children', () => {
         const { getByText } = render(
             <ThemeProvider theme={theme}>
-                <DividerAtom>
+                <DividerAtom id="divider">
                     <span>Test Child</span>
                 </DividerAtom>
             </ThemeProvider>
@@ -79,7 +82,7 @@ describe('<DividerAtom />', () => {
     
         expect(getByText('Test Child')).toBeInTheDocument();
     });
-
+    
 
 });
 

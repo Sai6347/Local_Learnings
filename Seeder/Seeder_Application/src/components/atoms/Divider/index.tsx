@@ -1,24 +1,23 @@
 import { Divider, SxProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import React from "react";
-// import theme from "../../../theme";
 
-interface DividerProps {
+export interface DividerProps {
     orientation?: "horizontal" | "vertical";
     variant?: "fullWidth" | "inset" | "middle";
-    color?: string;
     sx?: SxProps;
     children?: React.ReactNode;
     textAlign?: "left" | "right";
     borderBottomWidth?: string;
     height?: string;
+    id?: string;
 }
 
 const StyledDivider = styled(Divider, {
     shouldForwardProp: (prop) => prop !== "borderBottomWidth" && prop !== "height",
-    })<DividerProps>(({ theme, borderBottomWidth, height }) => ({
-    borderColor: theme.palette?.Borders.highEmphasis,
-    color: theme.palette.text?.mediumEmphasis,
+})<DividerProps>(({ theme, borderBottomWidth, height }) => ({
+    borderColor: theme.palette.Borders.highEmphasis,
+    color: theme.palette.text.mediumEmphasis,
     borderBottomWidth: borderBottomWidth ?? undefined,
     height: height ?? undefined,
     "&::before, &::after": {
@@ -28,7 +27,7 @@ const StyledDivider = styled(Divider, {
 }));
 
 
-const DividerAtom: React.FC<DividerProps> = ({ orientation, variant, sx, children, textAlign, borderBottomWidth, height }) => {
+export const DividerAtom: React.FC<DividerProps> = ({ orientation, variant, sx, children, textAlign, id, borderBottomWidth, height }) => {
    
 
     return (
@@ -39,10 +38,9 @@ const DividerAtom: React.FC<DividerProps> = ({ orientation, variant, sx, childre
                 sx={sx}
                 borderBottomWidth = {borderBottomWidth}
                 height= {height}
+                data-testid={id}
             >
                 {children}
             </StyledDivider>
     );
 }
-
-export default DividerAtom;

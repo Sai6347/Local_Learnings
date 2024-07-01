@@ -1,23 +1,12 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import { ThemeProvider } from '@mui/material/styles';
-import DividerAtom from './index';
-import { SxProps } from '@mui/material';
-import theme from "../../../theme";
+import { DividerAtom, DividerProps } from './index';
+import { ThemeProvider } from '@mui/material';
+import theme from '../../../theme';
 
-interface DividerProps {
-  orientation?: "horizontal" | "vertical";
-  variant?: "fullWidth" | "inset" | "middle";
-  color?: string;
-  sx?: SxProps;
-  children?: React.ReactNode;
-  textAlign?: "left" | "right";
-  borderBottomWidth?: string;
-  height?: string;
-}
 
 export default {
-  title: 'Components/Atoms/DividerAtom',
+  title: 'Atoms/DividerAtom',
   component: DividerAtom,
   argTypes: {
     orientation: {
@@ -50,11 +39,10 @@ export default {
   },
 } as Meta;
 
-
 const Template: StoryFn<DividerProps> = (args) => (
-  <ThemeProvider theme={theme}>
-    <DividerAtom {...args} />
-  </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <DividerAtom {...args} />
+    </ThemeProvider>
 );
 
 export const HorizontalDivider = Template.bind({});
@@ -63,7 +51,6 @@ HorizontalDivider.args = {
   variant: 'fullWidth',
   borderBottomWidth: '2px',
   height: '20px',
-  color: '#414F3D'
 };
 
 export const DividerwithText = Template.bind({});
