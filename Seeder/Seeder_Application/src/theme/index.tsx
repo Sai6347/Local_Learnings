@@ -2,6 +2,16 @@ import { createTheme } from "@mui/material/styles";
 import React from "react";
 
 declare module "@mui/material/styles" {
+
+  interface CustomColors {
+    railTrack: string;
+  }
+  interface CustomPalette {
+    customColors: {
+      railTrack: string;
+    };
+  }
+  
   interface TypographyVariants {
     title: React.CSSProperties;
     heading1: React.CSSProperties;
