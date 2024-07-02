@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 import { TypographyAtom, TypoProps } from './index';
+import theme from '../../../theme';
 
 export default {
   title: 'Atoms/TypographyAtom',
@@ -29,13 +30,14 @@ DefaultTypography.args = {
 export const ColoredTypography = Template.bind({});
 ColoredTypography.args = {
   variant: 'h3',
-  color: '#FF5733',
+  color: theme.palette.text.mediumEmphasis,
   children: 'Colored Typography',
 };
 
 export const CustomVariantTypography = Template.bind({});
 CustomVariantTypography.args = {
   variant: 'title',
+  color: theme.palette.text.highEmphasis,
   children: 'Custom Variant Typography',
 };
 
