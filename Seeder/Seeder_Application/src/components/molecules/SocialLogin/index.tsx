@@ -1,6 +1,6 @@
+import React from "react";
 import { Card, Stack, TypographyProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import React from "react";
 import { TypographyAtom } from "../../atoms/Typography";
 
 
@@ -10,8 +10,12 @@ export interface LoginProps {
     variant: TypographyProps['variant'];
     children: string;
     id?: string;
+    onClick?: () => void;
 }
 
+// const onClickSample: any = () => {
+//     alert(" Social Login is Clicked ")
+// }
 
 const StyledCard = styled(Card)(({ theme }) => ({
     width: '100%',
@@ -23,7 +27,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
     alignItems: 'center',
     borderRadius: '12px',
     backgroundColor: theme.palette.background.elevation1,
-
+    cursor: 'pointer',
 }));
 
 const StyledImgDiv = styled(Stack)(({ theme }) => ({
@@ -38,11 +42,11 @@ const StyledImage = styled('img')(({theme}) => ({
 }));
 
 
-export const SocialLogin: React.FC<LoginProps> = ({ src, alt, variant, id, children}) => {
+export const SocialLogin: React.FC<LoginProps> = ({ src, alt, variant, id, children, onClick }) => {
 
     return(
 
-        <StyledCard data-testid={id}>
+        <StyledCard data-testid={id} onClick={onClick}>
             <Stack spacing={2}>
                 <StyledImgDiv>
                     <StyledImage src={src} alt={alt} />

@@ -1,11 +1,16 @@
 
-const path = '/assets/images'
-
-const iconPath = {
-    // developer: `${path}/developer.jpg`,
-    google: `${path}/google.svg`,
-    stripe: `${path}/stripe.svg`,
-    xero: `${path}/xero.svg`,
+const imgPath = '/assets/images'
+const path = '/assets/icons'
+        
+const IconPath = {
+    
+    google: `${imgPath}/google.svg`,
+    stripe: `${imgPath}/stripe.svg`,
+    xero: `${imgPath}/xero.svg`,
+      
+    IndeterminateImg: `${path}/minus-square.svg`,
+    UncheckedImg: `${path}/no tick-square.svg`,
+    CheckedImg: `${path}/tick-square.svg`,
 }
 
-export default iconPath;
+export default IconPath;

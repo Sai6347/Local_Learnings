@@ -1,17 +1,15 @@
 import React from "react";
-import { LoginProps, SocialLogin } from "./index";
 import { Meta, StoryFn } from "@storybook/react/*";
+import { LoginProps, SocialLogin } from "./index";
+import  IconPath  from "../../../utils/Constants";
 
-import iconPath from "../../../utils/Constants"; 
-import { ThemeProvider } from "@mui/material";
-import theme from "../../../theme";
 
-const googleLogo = iconPath.google;
-const stripeLogo = iconPath.stripe;
-const xeroLogo = iconPath.xero;
+const googleLogo = IconPath.google;
+const stripeLogo = IconPath.stripe;
+const xeroLogo = IconPath.xero;
 
 export default {
-    title: 'Molecules/SocialLogin',
+    title: 'components/Molecules/SocialLogin',
     Component: SocialLogin,
     argTypes: {
         variant: {
@@ -27,33 +25,38 @@ export default {
 } as Meta;
 
 const Template: StoryFn<LoginProps> = (args) =>( 
-    // <SocialLogin {...args} />
-    <ThemeProvider theme={theme}>
-      <SocialLogin {...args} />
-    </ThemeProvider>
+    <SocialLogin {...args} />
 
 );
 
 export const GoogleLogin = Template.bind({});
-GoogleLogin.args = {
-    src: googleLogo,
-    alt: 'Google Logo',
-    variant: 'button',
-    children: 'Google Login' 
-}
+    GoogleLogin.args = {
+        src: googleLogo,
+        alt: 'Google Logo',
+        variant: 'button',
+        children: 'Google Login', 
+    }
 
 export const StripeLogin = Template.bind({});
-StripeLogin.args = {
-    src: stripeLogo,
-    alt: 'Stripe Logo',
-    variant: 'subtitle2',
-    children: 'Stripe Login' 
-}
+    StripeLogin.args = {
+        src: stripeLogo,
+        alt: 'Stripe Logo',
+        variant: 'title',
+        children: 'Stripe' 
+    }
 
 export const XeroLogin = Template.bind({});
-XeroLogin.args = {
-    src: xeroLogo,
-    alt: 'Xero Logo',
-    variant: 'caption',
-    children: 'Xero Login' 
-}
+    XeroLogin.args = {
+        src: xeroLogo,
+        alt: 'Xero Logo',
+        variant: 'heading2',
+        children: 'Xero Login' 
+    }
+
+export const GoogleSignup = Template.bind({});
+    GoogleSignup.args = {
+        src: googleLogo,
+        alt: 'Google Logo',
+        variant: 'body2',
+        children: 'Signup', 
+    }

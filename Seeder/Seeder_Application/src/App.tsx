@@ -4,9 +4,22 @@ import { Box, CssBaseline, Stack, Typography } from "@mui/material";
 import theme from "./theme";
 import { DividerAtom } from "./components/atoms/Divider/index";
 import { TypographyAtom } from "./components/atoms/Typography";
-import iconPath from "./utils/Constants";
+import  IconPath  from "./utils/Constants";
 // import GoogleIcon from '../public/assets/images/google.svg';
 import { SocialLogin } from "./components/molecules/SocialLogin";
+import styled from "@emotion/styled";
+
+
+
+
+const StyledStack = styled(Stack)(({ theme }) => ({
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'center', 
+  alignItems: 'center',
+  padding: '10px'
+
+}));
 
 export default function App() {
 
@@ -20,9 +33,9 @@ export default function App() {
         }}
       >
 
-        <Typography variant="heading2" color="secondary"> Local Application </Typography> <br /> <br />   
+        {/* <Typography variant="heading2" color="secondary"> Local Application </Typography> <br /> <br />   
 
-        <DividerAtom orientation="horizontal" variant="fullWidth" borderBottomWidth="5px"/>
+        <DividerAtom orientation="horizontal" variant="fullWidth" borderBottomWidth="5px"/> */}
 
         <br />
 
@@ -39,12 +52,12 @@ export default function App() {
         
         <br />
 
-        <TypographyAtom
+        {/* <TypographyAtom
           variant="title" 
           color= {theme.palette.text.highEmphasis}
           children="Login to Seeder"/> 
 
-        <br /> <br />
+        <br /> <br /> */}
 
         {/* <TypographyAtom 
           variant="heading3" 
@@ -53,14 +66,15 @@ export default function App() {
 
 
         
-        {/* <img src={iconPath.developer} alt="devimage" style={{ width:'20%', height: 'auto'}}/> */}
+        {/* <img src={IconPath.developer} alt="devimage" style={{ width:'20%', height: 'auto'}}/> */}
 
 
-
+        <TypographyAtom variant='heading2' children='Social Login' /> <br /> <br />
         <Stack direction="row" spacing={5}>
-          <SocialLogin src={iconPath.google} alt="google Icon" variant="button" children="Google"/>
-          <SocialLogin src={iconPath.stripe} alt="stripe Icon" variant="button" children="Stripe"/>
-          <SocialLogin src={iconPath.xero} alt="xero Icon" variant="button" children="Xero"/>
+          <SocialLogin src={IconPath.google} alt="google Icon" variant="button" children="Google"/>
+          {/* <SocialLogin src={IconPath.stripe} alt="stripe Icon" variant="button" children="Stripe"/>
+          <SocialLogin src={IconPath.xero} alt="xero Icon" variant="button" children="Xero"/> */}
+
         </Stack>
 
         </Box>
