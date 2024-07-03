@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "@emotion/styled";
 import { ThemeProvider } from "@mui/material/styles";
 import { Box, CssBaseline, Stack, Typography } from "@mui/material";
 import { DividerAtom } from "./components/atoms/Divider/index";

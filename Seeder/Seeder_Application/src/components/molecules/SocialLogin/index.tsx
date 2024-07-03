@@ -13,11 +13,7 @@ export interface LoginProps {
     onClick?: () => void;
 }
 
-    {/*
-    const onClickSample: any = () => {
-        alert(" Social Login is Clicked ")
-    }
-    */}
+
 
 const StyledCard = styled(Card)(({ theme }) => ({
     width: '100%',
