@@ -1,25 +1,14 @@
 import React from "react";
+import styled from "@emotion/styled";
 import { ThemeProvider } from "@mui/material/styles";
 import { Box, CssBaseline, Stack, Typography } from "@mui/material";
-import theme from "./theme";
 import { DividerAtom } from "./components/atoms/Divider/index";
 import { TypographyAtom } from "./components/atoms/Typography";
-import  IconPath  from "./utils/Constants";
-// import GoogleIcon from '../public/assets/images/google.svg';
 import { SocialLogin } from "./components/molecules/SocialLogin";
-import styled from "@emotion/styled";
+import  IconPath  from "./utils/Constants";
+import theme from "./theme";
 
 
-
-
-const StyledStack = styled(Stack)(({ theme }) => ({
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'center', 
-  alignItems: 'center',
-  padding: '10px'
-
-}));
 
 export default function App() {
 
@@ -33,9 +22,9 @@ export default function App() {
         }}
       >
 
-        {/* <Typography variant="heading2" color="secondary"> Local Application </Typography> <br /> <br />   
+        <Typography variant="heading2" color="secondary"> Local Application </Typography> <br /> <br />   
 
-        <DividerAtom orientation="horizontal" variant="fullWidth" borderBottomWidth="5px"/> */}
+        <DividerAtom orientation="horizontal" variant="fullWidth" borderBottomWidth="5px"/>
 
         <br />
 
