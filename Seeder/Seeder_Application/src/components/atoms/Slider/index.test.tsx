@@ -12,10 +12,10 @@ describe('SliderComponent', () => {
     return render(
       <ThemeProvider theme={theme}>
         <CustomSliderComponent
-          maxValue={props.maxValue || 100}
-          value={props.value || 0}
+          maxValue={props.maxValue ?? 100}
+          value={props.value ?? 0}
           onSliderChange={ mockFunction}
-          width={props.width || '100%'}
+          width={props.width ?? '100%'}
         />
       </ThemeProvider>
     );
