@@ -2,22 +2,22 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import CustomButton from './index';
 import '@testing-library/jest-dom';
-import theme from '../../../theme/index'
+import theme from '../../../theme/index';
 
- describe('CustomButton Component', () => {
+describe('CustomButton Component', () => {
   it('should render button with default props', () => {
     render(
-        <CustomButton>Default Button</CustomButton>
+      <CustomButton>Default Button</CustomButton>
     );
     const buttonElement = screen.getByTestId('button');
     expect(buttonElement).toBeInTheDocument();
     expect(buttonElement).toHaveTextContent('Default Button');
   });
 
-  it(' should handle onClick event', () => {
+  it('should handle onClick event', () => {
     const handleClick = jest.fn();
     render(
-        <CustomButton onClick={handleClick}>Clickable Button</CustomButton>
+      <CustomButton onClick={handleClick}>Clickable Button</CustomButton>
     );
     const buttonElement = screen.getByTestId('button');
     fireEvent.click(buttonElement);
@@ -43,14 +43,14 @@ import theme from '../../../theme/index'
 
   it('should disable button when disabled prop is true', () => {
     render(
-        <CustomButton
-          variant="contained"
-          backgroundColor={theme.palette.primary.purple[500]}
-          opacity={0.8}
-          disabled
-        >
-          Disabled Button
-        </CustomButton>
+      <CustomButton
+        variant="contained"
+        backgroundColor={theme.palette.primary.purple[500]}
+        opacity={0.8}
+        disabled
+      >
+        Disabled Button
+      </CustomButton>
     );
 
     const buttonElement = screen.getByTestId('button');
@@ -59,16 +59,16 @@ import theme from '../../../theme/index'
 
   it('should render button with custom styles and verifies all props', () => {
     render(
-        <CustomButton
-          variant="contained"
-          backgroundColor={theme.palette.primary.purple[500]}
-          opacity={0.8}
-          backgroundHoverColor={theme.palette.primary.purple[500]}
-          disabled={false}
-          style={{ padding: '10px', fontSize: '20px' }}
-        >
-          Full Coverage Button
-        </CustomButton>
+      <CustomButton
+        variant="contained"
+        backgroundColor={theme.palette.primary.purple[500]}
+        opacity={0.8}
+        backgroundHoverColor={theme.palette.primary.purple[500]}
+        disabled={false}
+        style={{ padding: '10px', fontSize: '20px' }}
+      >
+        Full Coverage Button
+      </CustomButton>
     );
 
     const buttonElement = screen.getByTestId('button');
@@ -79,4 +79,5 @@ import theme from '../../../theme/index'
     expect(buttonElement).toHaveStyle('font-size: 20px');
     expect(buttonElement).not.toBeDisabled();
   });
+
 });

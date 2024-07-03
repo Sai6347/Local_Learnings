@@ -90,6 +90,21 @@ declare module '@mui/material/styles' {
     };
   }
 
+  interface PaletteColorOptions {
+    main?: string;
+    light?: string;
+    dark?: string;
+    contrastText?: string;
+    purple?: {
+      500?: string;
+      400?: string;
+      600?: string;
+    };
+    white?: {
+      500?: string;
+    };
+  }
+
   interface PaletteStructural {
     background: string;
     grey: {
@@ -234,7 +249,7 @@ const palette = {
     lowEmphasis: '#727080',
   },
   customColors: {
-    railTrack: '#3A3A3D',  //railTrack color 
+    railTrack: '#3A3A3D',  
   },
 };
 
@@ -270,9 +285,8 @@ const theme = createTheme({
           padding: '12px 24px',
         },
         outlined: {
-          borderColor: '#E8E8E9',
-          color: '#E8E8E9',
-          border: '1px solid #E8E8E9',
+          borderColor: palette.primary.purple['500'],
+          color: '#C9C8CC',
           padding: '12px 24px',
         },
         text: {

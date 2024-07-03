@@ -17,11 +17,7 @@ describe('<SocialLogin />', () => {
     };
 
     it('should render with default props', () => {
-        render(
-            
-                <SocialLogin {...defaultProps} />
-            
-        );
+        render( <SocialLogin {...defaultProps} /> );
 
         const socialLoginElement = screen.getByTestId('socialLogin');
         expect(socialLoginElement).toBeInTheDocument();
@@ -41,11 +37,7 @@ describe('<SocialLogin />', () => {
     }
 
     it('should render with alternate props', () => {
-        render(
-            
-                <SocialLogin {...alternateProps} />
-            
-        );
+        render( <SocialLogin {...alternateProps} /> );
 
         const socialLoginElement = screen.getByTestId('socialLoginStr');
         expect(socialLoginElement).toBeInTheDocument();
@@ -65,12 +57,9 @@ describe('<SocialLogin />', () => {
         id: 'customSocialLogin'
     };
 
-    it('should render with alternate props', () => {
-        render(
-            
-                <SocialLogin {...customStyleProps} />
-            
-        );
+
+    it('should render with Custom Style props', () => {
+        render( <SocialLogin {...customStyleProps} /> );
 
         const socialLoginElement = screen.getByTestId('customSocialLogin');
         expect(socialLoginElement).toBeInTheDocument();

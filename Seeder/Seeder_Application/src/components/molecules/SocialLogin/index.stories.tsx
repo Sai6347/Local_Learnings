@@ -49,7 +49,7 @@ export const XeroLogin = Template.bind({});
     XeroLogin.args = {
         src: xeroLogo,
         alt: 'Xero Logo',
-        variant: 'heading2',
+        variant: 'body2',
         children: 'Xero Login' 
     }
 
@@ -57,6 +57,6 @@ export const GoogleSignup = Template.bind({});
     GoogleSignup.args = {
         src: googleLogo,
         alt: 'Google Logo',
-        variant: 'body2',
+        variant: 'heading3',
         children: 'Signup', 
     }

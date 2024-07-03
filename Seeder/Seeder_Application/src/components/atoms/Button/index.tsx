@@ -9,6 +9,11 @@ export interface ButtonProps extends MuiButtonProps {
   backgroundColor?: string;
   opacity?: number;
   backgroundHoverColor?: string;
+  width?: string | number;
+  height?: string | number;
+  border?:string;
+  id?: string;
+  className?: string 
 }
 
 const StyledButton = styled(
@@ -19,11 +24,11 @@ const StyledButton = styled(
     ...props
   }: ButtonProps) => <MuiButton {...props} />
 )(
-  ({ theme, backgroundColor, opacity, backgroundHoverColor }) => ({
+  ({ theme, backgroundColor, opacity, backgroundHoverColor}) => ({
     opacity: opacity ?? 1,
-    backgroundColor: backgroundColor ?? theme.palette.primary.main,
+    backgroundColor: backgroundColor,
     '&:hover': {
-      backgroundColor: backgroundHoverColor ?? theme.palette.primary.dark,
+      backgroundColor: backgroundHoverColor,
     },
   })
 );
@@ -35,6 +40,8 @@ const CustomButton: React.FC<ButtonProps> = ({
   backgroundColor,
   opacity,
   backgroundHoverColor,
+  id,
+  className,
   disabled,
   ...props
 }) => {
@@ -47,6 +54,8 @@ const CustomButton: React.FC<ButtonProps> = ({
       backgroundHoverColor={backgroundHoverColor}
       disabled={disabled}
       data-testid="button"
+      id={id}
+      className={className}
       {...props}
     >
       {children}

@@ -13,8 +13,6 @@ export interface LoginProps {
     onClick?: () => void;
 }
 
-
-
 const StyledCard = styled(Card)(({ theme }) => ({
     width: '100%',
     maxWidth: '130px',
@@ -40,7 +38,7 @@ const StyledImage = styled('img')(({theme}) => ({
 }));
 
 
-export const SocialLogin: React.FC<LoginProps> = ({ src, alt, variant, id, children, onClick }) => {
+export const SocialLogin: React.FC<LoginProps> = ({ src, alt, variant, id, children, onClick}) => {
 
     return(
 
