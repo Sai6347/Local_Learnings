@@ -57,6 +57,7 @@ describe('<SocialLogin />', () => {
         id: 'customSocialLogin'
     };
 
+
     it('should render with Custom Style props', () => {
         render( <SocialLogin {...customStyleProps} /> );
 

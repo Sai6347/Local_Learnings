@@ -13,7 +13,6 @@ export interface LoginProps {
     onClick?: () => void;
 }
 
-
 const StyledCard = styled(Card)(({ theme }) => ({
     width: '100%',
     maxWidth: '130px',

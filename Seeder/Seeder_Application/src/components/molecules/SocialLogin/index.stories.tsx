@@ -1,6 +1,6 @@
 import React from "react";
-import { LoginProps, SocialLogin } from "./index";
 import { Meta, StoryFn } from "@storybook/react/*";
+import { LoginProps, SocialLogin } from "./index";
 import  IconPath  from "../../../utils/Constants";
 
 
